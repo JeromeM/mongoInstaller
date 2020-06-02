@@ -16,26 +16,9 @@ limitations under the License.
 package main
 
 import (
-	"fmt"
-	"io/ioutil"
-	"net/http"
+	"mongoInstaller/cmd"
 )
 
-const url string = "https://www.mongodb.com/download-center/community"
-
-func fetchSite() string {
-	resp, _ := http.Get(url)
-	bytes, _ := ioutil.ReadAll(resp.Body)
-
-	body := string(bytes)
-	_ = resp.Body.Close()
-
-	return body
-}
-
 func main() {
-	// cmd.Execute()
-
-	body := fetchSite()
-	fmt.Println(body)
+	 cmd.Execute()
 }
